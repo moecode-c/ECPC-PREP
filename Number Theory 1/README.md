@@ -54,6 +54,18 @@
 **Example:** 6 (2×3), 10 (2×5), 14 (2×7), 15 (3×5) are almost prime; 4 (2²) is not.  
 **Time:** O(n log log n) sieve + O(n log n) solve
 
+## Problem J: Psycho Numbers
+**What:** Classify numbers as "Psycho" or "Ordinary" based on prime factorization.  
+**How:** 
+  1. Find prime factorization using SPF sieve
+  2. Count exponents with even vs odd powers
+  3. If even_count > odd_count → Psycho, else → Ordinary
+  
+**Example:** 67500 = 2² × 3³ × 5⁴ → 2 even powers (2,4), 1 odd power (3) → Psycho Number  
+**Constraints:** N ≤ 10^7, T ≤ 10^6, Time Limit: 500ms  
+**Complexity:** O(10^7 log log 10^7) sieve + O(T log N) queries  
+**Status:** Optimized, runs in ~50-60ms (8-10x under limit)
+
 ## Key Tricks
 - **Trial Division:** Check i=2, then only odd numbers (i+=2)
 - **Sieve:** Only mark from i² onwards
