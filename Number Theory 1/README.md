@@ -66,6 +66,17 @@
 **Complexity:** O(10^7 log log 10^7) sieve + O(T log N) queries  
 **Status:** Optimized, runs in ~50-60ms (8-10x under limit)
 
+## Problem K: Noldbach-like Prime Count
+**What:** Given n and k, determine if there are at least k primes `p` such that `p = p_i + p_{i+1} + 1` and `p ≤ n`.  
+**How:** Build a sieve up to 1000, generate prime list, and count valid primes of that form up to n.  
+**Complexity:** O(n + π(n)) after sieve, with tiny constraints
+
+## Problem L: Odd Divisor (Greater Than 1)
+**What:** Check whether `n` has an odd divisor greater than 1.  
+**Key Insight:** This is true iff `n` is **not** a power of two.  
+**How:** Use bit check: if `(n & (n - 1)) == 0` → `NO`, else `YES`.  
+**Complexity:** O(1) per test case
+
 ## Key Tricks
 - **Trial Division:** Check i=2, then only odd numbers (i+=2)
 - **Sieve:** Only mark from i² onwards
