@@ -15,7 +15,7 @@ void solve() {
 int main() {
     fast_io();
 
-    int t = 1;
+    int t;
     // cin >> t;
     while (t--) {
         solve();
