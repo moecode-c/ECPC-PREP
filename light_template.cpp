@@ -16,7 +16,7 @@ int main() {
     fast_io();
 
     int t;
-    // cin >> t;
+    cin >> t;
     while (t--) {
         solve();
     }
