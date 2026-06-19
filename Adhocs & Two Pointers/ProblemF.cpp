@@ -1,56 +1,41 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-using ll = long long;
-
-void fast_io()
-{
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-}
-
+#define ll long long
 int main()
 {
-    fast_io();
-
-    int t;
-    cin >> t;
-    while (t--)
+    int TestCases;
+    cin >> TestCases;
+    while(TestCases--)
     {
-        int n;
-        cin >> n;
-
-        vector<pair<int, char>> v(n);
-
+        int n; cin >> n;
+        vector<ll>cells(n);
+        ll sum = 0;
         for (int i = 0; i < n; i++)
-            cin >> v[i].first;
-        string s;
-        cin >> s;
-        for (int i = 0; i < s.length(); i++)
-            v[i].second = s[i];
-
-        int l = 0, r = n - 1;
-        int sum = 0;
-
-        while (l < r)
         {
-            if (v[l].second != 'L')
-                l++;
-
-            if (v[r].second != 'R')
-                r--;
-
-            if (v[l].second == 'L' && v[r].second == 'R')
-            {
-                for (int i =  l ; i <= r ; i++){
-                    sum += v[i].first;
-                }
-                break;
-            }
+            cin >> cells[i];
+            sum += cells[i];
         }
-
-        cout << sum << endl;
+        string directions; cin >> directions;
+        int left = 0, right = n - 1;
+        ll points = 0;
+        while (left < right)
+        {
+            while (directions[left] == 'R')
+            {
+                sum -= cells[left];
+                left++;
+            }
+            while (directions[right] == 'L')
+            {
+                sum -= cells[right];
+                right--;
+            }
+            if (right < left)
+                break;
+            points += sum;
+            sum = sum - cells[left] - cells[right];
+            left++; right--;
+        }
+        cout << points << "\n";
     }
-
-    return 0;
 }
