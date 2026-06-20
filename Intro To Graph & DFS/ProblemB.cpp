@@ -10,9 +10,9 @@ void dfs(int u)
 
     for (int v : adj[u])
     {
-        if (!vis[u])
+        if (!vis[v])
         {
-            dfs(u);
+            dfs(v);
         }
     }
 }
