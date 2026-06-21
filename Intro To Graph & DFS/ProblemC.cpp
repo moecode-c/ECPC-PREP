@@ -41,7 +41,7 @@ int main()
         adj.resize(n + 1);
         vis.assign(n + 1, false);
 
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < m; i++)
         {
             int u, v;
             cin >> u >> v;
