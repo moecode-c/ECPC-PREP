@@ -8,8 +8,10 @@ void fast_io() {
     cin.tie(nullptr);
 }
 
-void solve() {
-    // Write solution here
+int root(int x){
+    while(x % 2 == 0)
+        x /= 2;
+    return x;
 }
 
 int main() {
@@ -17,8 +19,29 @@ int main() {
 
     int t;
     cin >> t;
+
     while (t--) {
-        solve();
+        int n;
+        cin >> n;
+
+        vector<int> pos(n + 1);
+
+        for(int i = 1; i <= n; i++){
+            int x;
+            cin >> x;
+            pos[x] = i;
+        }
+
+        bool ok = true;
+
+        for(int x = 1; x <= n; x++){
+            if(root(x) != root(pos[x])){
+                ok = false;
+                break;
+            }
+        }
+
+        cout << (ok ? "YES" : "NO") << '\n';
     }
 
     return 0;
