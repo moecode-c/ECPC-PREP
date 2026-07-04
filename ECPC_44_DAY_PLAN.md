@@ -1,247 +1,155 @@
-# 🏁 ECPC 2026 — 44-Day Qualification Sprint
+# 🎯 ECPC 2026 — Mid-Effort Plan to Quals (~20 hrs/week)
 
-**Start:** Mon June 22, 2026 · **Quals:** Wed Aug 5, 2026 · **Goal:** be MIU's #1 team + qualify for finals.
+**Revised:** Sat Jul 4, 2026 · **Quals:** Wed Aug 5, 2026 · **Goal:** be MIU's #1 team + qualify.
 
-You're ~Pupil (1300), <6 months in, 30+ hrs/week, weak-but-ambitious 3-person team. You've covered **number theory, two pointers, DFS**. The gaps this plan closes, in order of value: **DP → binary search → prefix sums → greedy → DSU → BFS/shortest paths**, plus heavy contest + team reps.
+You're ~Pupil (1300), <6 months in. You've already covered **number theory, two pointers, DFS, and most of DP** (AtCoder A–J + more — you're *ahead* of the old plan here). What's left: **own** what you've rented, fill the remaining gaps (**greedy → DSU → BFS/Dijkstra**), and get real **team reps** in.
 
----
-
-## How to use this
-
-- One section per day. Check the boxes. Commit the file daily so you can see your streak.
-- **No rest days** — but intensity varies by design. Weekends = contests, Sundays lighter, last 2 days taper (cramming the day before a contest *lowers* your score — trust it).
-- Daily load is ~6–8 hrs. If you have more, add sweet-spot problems (your rating **+200**).
-
-### The 5 non-negotiable rules (these matter more than the schedule)
-1. **+200 rule** — most solving at your rating **+100 to +300** (crackable in 20–45 min).
-2. **30–45 min, then editorial — then re-implement from scratch, closed-book.** Copying teaches nothing.
-3. **Upsolve everything.** Every contest problem you missed, you solve after. ~70% of growth is here.
-4. **Diagnose every miss:** tag it `knowledge` / `misread` / `bug`. Track the pattern.
-5. **Protect sleep.** A tired grind is a slow grind — even with no rest days.
-
-### Track every problem
-Keep a sheet: `problem | rating | solved/failed | time | failure reason`. Build your **team reference notebook** (printed, ICPC-legal) as you go — add each template the day you learn it.
+This is the sustainable version — ~3 hrs/day, **one rest day a week.** A mid plan you actually finish beats a max plan you burn out on. The tradeoff is honest: fewer hours nudges qualify-odds from ~50–60% toward ~40–50% — but the two things that *actually* decide qualifying (owning problems cold + the team contest) cost quality, not hours, and this plan protects both.
 
 ---
 
-# WEEK 1 (Days 1–7) · Jun 22–28 — Close fundamentals + quick wins
+## The 2 rules that matter most (do these even on a bad week)
 
-> Finish DFS, clear your 3 unfinished stubs, and pick up the fast high-frequency tools you're missing: binary search (incl. **on the answer**) and prefix/difference arrays.
+1. **🔁 Daily cold re-solve.** Before anything new, re-solve **2 problems from 3–5 days ago** — closed-book, empty file. Keep them in `redo.txt`. Can't reproduce one? It goes back on the list. *This is the fix for "it doesn't stick."*
+2. **🤝 One 5-hour team contest every week.** 1 computer, 3 people, problems on paper, real rules. Non-negotiable — this is the biggest lever on qualifying, bigger than your own grind.
 
-### ☐ Day 1 — Mon Jun 22 — Clean slate
-- [ ] Finish the remaining problems in `Intro To Graph & DFS`.
-- [ ] **Upsolve your stubs — solve them fully:** `CF Round 1096 C`, `CF Round 1096 D`, `Adhocs ProblemJ` (no empty `solve()` left behind).
-- [ ] Start CF EDU → **Binary Search** (watch steps 1–2).
+### The other 3 (still true, lower priority)
+3. **+200 rule** — most solving at your rating **+100 to +300**. Something you can't even grasp after ~20 min on the editorial is *above zone* — shelve it, no guilt.
+4. **30–45 min, then a *small* hint or editorial → re-implement closed-book.** Renting ≠ owning.
+5. **Diagnose every miss:** `knowledge` / `misread` / `bug`. Protect sleep.
 
-### ☐ Day 2 — Tue Jun 23 — Binary search (on arrays)
-- [ ] Finish CF EDU Binary Search steps + its practice problems.
-- [ ] Solve 6–8 problems tagged `binary search`, rated 1100–1400.
-- [ ] Note the difference: searching a *sorted array* vs. searching *the answer*.
+### Daily rhythm (~3 hrs)
+`redo (30–40 min) → topic study + problems in your +200 zone (~2 hr) → log misses`. Contest days replace this with the contest + upsolve. **Sunday = rest or very light.**
 
-### ☐ Day 3 — Wed Jun 24 — Binary search ON THE ANSWER (key skill)
-- [ ] Learn the pattern: "can we do it with X? → monotonic → bsearch X." Minimize-the-max / maximize-the-min.
-- [ ] Solve 6 problems of this type, 1300–1500.
-- [ ] 📒 Add a **binary-search-on-answer** template to your notebook.
-
-### ☐ Day 4 — Thu Jun 25 — Prefix sums + difference arrays
-- [ ] USACO Guide → **Prefix Sums** (1D and 2D) + difference arrays.
-- [ ] Solve 8 problems, 1100–1400.
-
-### ☐ Day 5 — Fri Jun 26 — 🤝 TEAM CONTEST
-- [ ] 5-hour **easy** Vjudge ICPC/ECPC set: 1 computer, 3 people, problems on paper.
-- [ ] Upsolve everything the team missed, together.
-
-### ☐ Day 6 — Sat Jun 27 — Individual virtual contest
-- [ ] Timed past **CF Div 3** (~2h15m).
-- [ ] **Full upsolve** — every problem you couldn't solve live, including D/E.
-
-### ☐ Day 7 — Sun Jun 28 — Consolidate
-- [ ] Mixed set, 8–10 problems combining binary search + prefix sums + two pointers (1200–1500).
-- [ ] Review the week's failure tags. What's the recurring weakness?
+### Where to pull problems
+- **Topic days** (greedy, DSU, graphs, etc.) → **topic-organized** sources: CSES, CF EDU, USACO Guide. These are best for closing a *specific* gap.
+- **Sweet-spot / mixed / speed days** → **A2OJ ladder** at your rating (~1300–1500) — a curated rating-bucketed list, kills "what do I solve next." Use a live mirror: [earthshakira clone](https://earthshakira.github.io/a2oj-clientside/server/Ladders.html) or [c2-ladders](https://c2-ladders.com) (main a2oj.com is often down).
+- **Team days** → **Vjudge** ICPC/ACPC sets (better than any ladder for real 5-hr team reps).
+- ⚠️ A2OJ is a *source*, not a plan. Never let ladder volume crowd out the daily cold re-solve or the weekly team contest — those decide qualifying, the ladder doesn't.
 
 ---
 
-# WEEK 2 (Days 8–14) · Jun 29–Jul 5 — DP Part 1: linear DP & knapsack
+# KICKOFF · Sat Jul 4 – Sun Jul 5 — Reset & test what you actually own
 
-> The big one. You have **zero** DP so far and it's the highest-value topic. The **AtCoder Educational DP Contest** is your spine — re-implement every problem from scratch.
+> Before new material, find out how much of your DP is *owned* vs *rented*. This sets your redo list.
 
-### ☐ Day 8 — Mon Jun 29 — DP foundations
-- [ ] Learn: state, transition, base case, memoization vs. tabulation (USACO Guide → Intro to DP).
-- [ ] AtCoder EDU DP: **A (Frog 1)**, **B (Frog 2)**. Re-implement both closed-book.
+### ☐ Sat Jul 4 — Ownership audit
+- [ ] Make `redo.txt`. List every DP problem you solved with an editorial/hint.
+- [ ] Pick **3 of them at random** and re-solve cold, empty file. However many you *can't* → those are the truth about where you stand. Keep them on the list.
+- [ ] Schedule this week's team contest with your teammates (pick the day now).
 
-### ☐ Day 9 — Tue Jun 30 — Knapsack
-- [ ] AtCoder EDU DP: **C (Vacation)**, **D (Knapsack 1)**. Understand 0/1 knapsack cold.
-- [ ] 4 more linear-DP / knapsack problems, 1200–1400.
-
-### ☐ Day 10 — Wed Jul 1 — Knapsack variants + counting
-- [ ] AtCoder EDU DP: **E (Knapsack 2)** (value-indexed state — note why the state flips).
-- [ ] CSES DP: *Dice Combinations*, *Minimizing Coins*, *Coin Combinations I & II*.
-
-### ☐ Day 11 — Thu Jul 2 — Coin-change family
-- [ ] CSES DP: *Removing Digits*, *Grid Paths*.
-- [ ] 5 problems, 1300–1500.
-- [ ] 📒 Add knapsack + coin-change templates to notebook.
-
-### ☐ Day 12 — Fri Jul 3 — 🤝 TEAM CONTEST
-- [ ] 5-hour Vjudge set + team upsolve.
-
-### ☐ Day 13 — Sat Jul 4 — Individual virtual contest
-- [ ] Timed CF Div 3 + full upsolve. Make sure you get any DP problem in upsolve.
-
-### ☐ Day 14 — Sun Jul 5 — DP review
-- [ ] Re-solve AtCoder A–E from scratch (speed check).
-- [ ] 5 mixed DP problems, 1300–1500.
+### ☐ Sun Jul 5 — Light + plan
+- [ ] Re-solve the ones you failed yesterday (cold again).
+- [ ] Skim CF EDU **Binary Search** — is it solid or a gap? Decide if Week A needs it.
 
 ---
 
-# WEEK 3 (Days 15–21) · Jul 6–12 — DP Part 2: grid, LIS, DAG/tree
+# WEEK A · Mon Jul 6 – Sun Jul 12 — Own the DP + patch fast tools
 
-### ☐ Day 15 — Mon Jul 6 — Grid DP + LCS
-- [ ] AtCoder EDU DP: **F (LCS)**, **H (Grid 1)** (paths with obstacles).
+> Not much *new* DP — you have the volume. Goal: make it automatic, and pick up the two cheap high-frequency tools (binary-search-on-answer, prefix sums) if they're shaky.
 
-### ☐ Day 16 — Tue Jul 7 — LIS
-- [ ] Longest Increasing Subsequence: O(n²) **and** O(n log n). CSES: *Increasing Subsequence*.
-- [ ] 5 LIS-flavored problems.
-
-### ☐ Day 17 — Wed Jul 8 — DAG DP
-- [ ] AtCoder EDU DP: **G (Longest Path)**, **L (deque/game DP)**. DP over a DAG.
-
-### ☐ Day 18 — Thu Jul 9 — Tree DP + game DP intro
-- [ ] AtCoder EDU DP: **K (Stones — Grundy/game intro)**, **P (Independent Set on a tree)**.
-- [ ] 📒 Add a tree-DP skeleton to notebook.
-
-### ☐ Day 19 — Fri Jul 10 — 🤝 TEAM CONTEST
-- [ ] 5-hour Vjudge set + team upsolve.
-
-### ☐ Day 20 — Sat Jul 11 — Individual virtual contest (push up)
-- [ ] Try a **CF Div 2 A–C** timed this time + full upsolve.
-
-### ☐ Day 21 — Sun Jul 12 — DP consolidation
-- [ ] CSES DP: *Book Shop*, *Array Description*, *Edit Distance*, *Rectangle Cutting*.
+### ☐ Mon Jul 6 — DP consolidation
+- [ ] redo ×2. Re-solve AtCoder **A, C, D, F** cold — speed + correctness.
+- [ ] 3 fresh DP problems, 1300–1500.
+### ☐ Tue Jul 7 — Binary search on the answer
+- [ ] Pattern: "can we do it with X? → monotonic → bsearch X." 5 problems, 1300–1500.
+- [ ] 📒 Add bsearch-on-answer template to the notebook.
+### ☐ Wed Jul 8 — Prefix sums + difference arrays
+- [ ] 1D & 2D prefix sums, difference arrays. 6 problems, 1100–1400.
+### ☐ Thu Jul 9 — DP grid/LIS gap-fill
+- [ ] Whichever of grid DP / LIS you're weakest on. AtCoder **H**, CSES *Increasing Subsequence*. 4 problems.
+### ☐ Fri Jul 10 — 🤝 TEAM CONTEST
+- [ ] 5-hr easy Vjudge ICPC set. Focus this first one on the *meta*: who reads what, keyboard sharing. Upsolve together.
+### ☐ Sat Jul 11 — Individual contest
+- [ ] Timed CF Div 3 (~2h15m) + **full upsolve** (A–D, plus E only if you can grasp it).
+### 🌙 Sun Jul 12 — Rest / very light
+- [ ] Optional: re-read notebook, 2–3 easy confidence problems. Otherwise off.
 
 ---
 
-# WEEK 4 (Days 22–28) · Jul 13–19 — Greedy + DSU
+# WEEK B · Mon Jul 13 – Sun Jul 19 — Greedy + DSU
 
-### ☐ Day 22 — Mon Jul 13 — Greedy fundamentals
-- [ ] Exchange argument, sorting-based greedy, interval scheduling. USACO Guide → Greedy.
-- [ ] 8 problems, 1200–1400.
+> Two of your three named gaps. Greedy is half of every easy-medium set; DSU is cheap and pairs with your graph work.
 
-### ☐ Day 23 — Tue Jul 14 — Greedy + heaps
-- [ ] Priority-queue greedy (scheduling, "minimize cost", Huffman-style).
-- [ ] 6 problems, 1300–1500.
-
-### ☐ Day 24 — Wed Jul 15 — Greedy proof/counterexample reps
-- [ ] For each: can you justify it, or find a counterexample fast?
-- [ ] 6 problems tagged `greedy`, 1300–1600.
-
-### ☐ Day 25 — Thu Jul 16 — DSU (Union–Find)
-- [ ] Path compression + union by size/rank. CF EDU → DSU. CSES: *Road Construction*.
-- [ ] 6 problems. 📒 Add DSU template to notebook.
-
-### ☐ Day 26 — Fri Jul 17 — 🤝 TEAM CONTEST
-- [ ] 5-hour Vjudge set + team upsolve.
-
-### ☐ Day 27 — Sat Jul 18 — Individual virtual contest
-- [ ] Timed CF Div 3 + full upsolve.
-
-### ☐ Day 28 — Sun Jul 19 — DSU applications + greedy review
-- [ ] Dynamic components, cycle detection, Kruskal preview. Re-attempt 2 greedy problems that beat you.
+### ☐ Mon Jul 14 — Greedy fundamentals
+- [ ] Exchange argument, sorting-based greedy, interval scheduling. 6 problems, 1200–1400.
+### ☐ Tue Jul 15 — Greedy + heaps + proofs
+- [ ] Priority-queue greedy. For each: justify it or find a counterexample fast. 6 problems, 1300–1500.
+### ☐ Wed Jul 16 — DSU (union–find)
+- [ ] Path compression + union by size. 6 problems. 📒 Add DSU template.
+### ☐ Thu Jul 17 — DSU applications
+- [ ] Components, cycle detection, Kruskal preview. 5 problems, 1300–1500.
+### ☐ Fri Jul 18 — 🤝 TEAM CONTEST
+- [ ] 5-hr Vjudge set + team upsolve. Fix one coordination problem from last week.
+### ☐ Sat Jul 19 — Individual contest
+- [ ] Timed Div 3 + full upsolve. Push to get a D live.
+### 🌙 Sun Jul 20 — Rest / very light
 
 ---
 
-# WEEK 5 (Days 29–35) · Jul 20–26 — BFS, shortest paths, finish the graph toolkit
+# WEEK C · Mon Jul 21 – Sun Jul 27 — BFS, shortest paths (finish the graph toolkit)
 
-### ☐ Day 29 — Mon Jul 20 — BFS + 0-1 BFS
-- [ ] BFS on grid & graph, multi-source BFS, 0-1 BFS. CSES: *Labyrinth*, *Monsters*.
-- [ ] 6 problems.
-
-### ☐ Day 30 — Tue Jul 21 — Dijkstra
-- [ ] Dijkstra with a priority queue. CSES: *Shortest Routes I*.
-- [ ] 6 problems, 1400–1600. 📒 Add Dijkstra template.
-
-### ☐ Day 31 — Wed Jul 22 — Floyd–Warshall + when-to-use-what
-- [ ] All-pairs shortest path. CSES: *Shortest Routes II*.
-- [ ] 5 problems; write yourself a one-line "which algorithm when" cheat note.
-
-### ☐ Day 32 — Thu Jul 23 — MST + topological sort
-- [ ] Kruskal (reuse your DSU) + Prim. CSES: *Road Reparation*. Topo sort (Kahn + DFS).
-- [ ] 6 problems. 📒 Add MST + topo templates.
-
-### ☐ Day 33 — Fri Jul 24 — 🤝 TEAM CONTEST
-- [ ] 5-hour Vjudge set + team upsolve.
-
-### ☐ Day 34 — Sat Jul 25 — Individual virtual contest
+### ☐ Mon Jul 21 — BFS + 0-1 BFS
+- [ ] Grid & graph BFS, multi-source, 0-1 BFS. CSES *Labyrinth*, *Monsters*. 6 problems.
+### ☐ Tue Jul 22 — Dijkstra
+- [ ] PQ Dijkstra. CSES *Shortest Routes I*. 5 problems, 1400–1600. 📒 Add template.
+### ☐ Wed Jul 23 — MST + topo (light)
+- [ ] Kruskal (reuse DSU) + Kahn's topo sort. 5 problems. 📒 Add templates.
+### ☐ Thu Jul 24 — Graph mixed + "which algorithm when"
+- [ ] Mixed graph set, 6 problems. Write a one-line cheat: BFS vs 0-1 BFS vs Dijkstra vs FW.
+### ☐ Fri Jul 25 — 🤝 TEAM CONTEST
+- [ ] 5-hr Vjudge set + upsolve.
+### ☐ Sat Jul 26 — Individual contest
 - [ ] Timed contest + full upsolve.
-
-### ☐ Day 35 — Sun Jul 26 — Range queries (light)
-- [ ] Fenwick / BIT for prefix sums *with updates*. CF EDU → Fenwick.
-- [ ] 5 problems. (Segment tree = optional stretch, only if you have time.)
+### 🌙 Sun Jul 27 — Rest / very light
 
 ---
 
-# WEEK 6 (Days 36–42) · Jul 27–Aug 2 — Perform, don't learn
+# WEEK D · Mon Jul 28 – Sun Aug 2 — Perform, don't learn
 
-> Switch from absorbing theory to executing under pressure. Minimal new material; maximum contest reps + team coordination + patching your specific weak spots.
+> Switch from absorbing to executing. Minimal new material; contest reps + patch *your* weak spots + team dress rehearsal.
 
-### ☐ Day 36 — Mon Jul 27 — Diagnostic contest
-- [ ] Full timed CF Div 3 + deep upsolve.
-- [ ] Write your **weak-spot list** (the topics that still cost you time/points).
-
-### ☐ Day 37 — Tue Jul 28 — Patch weak spot #1
-- [ ] Targeted 8-problem set on your #1 weakness from yesterday.
-
-### ☐ Day 38 — Wed Jul 29 — ECPC-breadth simulation
-- [ ] 10 problems spanning implementation / math / greedy / DP / graph, 1200–1500, in timed blocks.
-
-### ☐ Day 39 — Thu Jul 30 — Patch weak spot #2 + speed
+### ☐ Mon Jul 28 — Diagnostic contest
+- [ ] Full timed Div 3 + deep upsolve. Write your **weak-spot list**.
+### ☐ Tue Jul 29 — Patch weak spot #1
+- [ ] Targeted 6-problem set on yesterday's #1 weakness.
+### ☐ Wed Jul 30 — Speed + breadth
+- [ ] 6 easy problems (1000–1200) as fast as possible — the easy half must be automatic.
+- [ ] 4 mixed (greedy/DP/graph), timed blocks.
+### ☐ Thu Jul 31 — Patch weak spot #2
 - [ ] Targeted set on weakness #2.
-- [ ] **Speed drill:** 6 easy problems (1000–1200) as fast as possible — the easy half of the set must be automatic.
-
-### ☐ Day 40 — Fri Jul 31 — 🤝 TEAM CONTEST (dress rehearsal)
-- [ ] Real ECPC/ACPC past regional set on Vjudge, **full ICPC rules**.
-- [ ] Practice the *meta*: split the problem-reading, who-takes-what, sharing one keyboard, when to abandon a problem. Upsolve.
-
-### ☐ Day 41 — Sat Aug 1 — Team strategy fixes
-- [ ] Review yesterday: where did you lose time? Fix roles + keyboard handoffs.
-- [ ] Shorter (3h) team set to test the fixes.
-
-### ☐ Day 42 — Sun Aug 2 — Finalize the notebook
-- [ ] Print-ready team reference: DSU, Dijkstra, BFS/0-1 BFS, MST, topo, sieve, modpow, knapsack, bsearch-on-answer (+ segment tree if you have it). **Verify each one compiles.**
-- [ ] Light: 5 problems, 1200–1400.
+### ☐ Fri Aug 1 — 🤝 TEAM CONTEST (dress rehearsal)
+- [ ] Real ECPC/ACPC past regional set, **full ICPC rules.** Rehearse the meta: read-split, who-takes-what, when to abandon. Upsolve.
+### ☐ Sat Aug 2 — Team fixes + notebook
+- [ ] Fix roles/handoffs from yesterday. Finalize the **print-ready notebook** (DSU, Dijkstra, BFS/0-1 BFS, MST, topo, sieve, modpow, knapsack, bsearch-on-answer). **Verify each compiles.**
+### 🌙 Sun Aug 3 — Rest / very light
 
 ---
 
-# FINAL 2 DAYS (43–44) · Aug 3–4 — Taper & sharpen
+# TAPER · Mon Aug 3 – Tue Aug 4
 
-> Not rest, but deliberately lighter. New topics now won't stick; sharpness and a clear head will.
+> New topics won't stick now; sharpness and a clear head will. Cramming the day before *lowers* your score — trust it.
 
-### ☐ Day 43 — Mon Aug 3 — Last sharpening contest
-- [ ] One relaxed-effort timed Div 3 + upsolve.
-- [ ] Re-read your whole notebook.
+### ☐ Mon Aug 3 — Last sharpening
+- [ ] One relaxed timed Div 3 + upsolve. Re-read the whole notebook.
+### ☐ Tue Aug 4 — Stay warm, then stop
+- [ ] 4–5 confidence problems (1000–1200), no grinding.
+- [ ] Logistics: template/environment ready, accounts working, **sleep early.**
 
-### ☐ Day 44 — Tue Aug 4 — Stay warm, then stop
-- [ ] 4–5 confidence problems (1000–1200) — keep the hands warm, no grinding.
-- [ ] Re-read notebook + your "common bugs" list.
-- [ ] Logistics: environment/template ready, accounts working, **sleep early.**
-
----
-
-## 🏆 Day 45 — Wed Aug 5 — ECPC QUALIFICATION
-Read all problems first. Grab the easy ones fast and *correctly*. Trust the notebook. Go get it.
+## 🏆 Wed Aug 5 — ECPC QUALIFICATION
+Read all problems first. Grab the easy ones fast and *correctly*. Trust the notebook. Go.
 
 ---
 
-### Topic completion checklist
-- [ ] Binary search (array + on the answer)
+### Remaining-topics checklist
+- [ ] DP owned cold (re-solve without editorial) ← the real test, not "solved once"
+- [ ] Binary search on the answer
 - [ ] Prefix sums + difference arrays
-- [ ] DP: linear · knapsack · coin change · grid · LCS · LIS · DAG · tree · game intro
 - [ ] Greedy (sorting + heap + proofs)
 - [ ] DSU (union–find)
 - [ ] BFS / 0-1 BFS / multi-source
-- [ ] Dijkstra · Floyd–Warshall
-- [ ] MST (Kruskal/Prim) · topological sort
-- [ ] Fenwick / BIT (light)
+- [ ] Dijkstra · MST (Kruskal) · topological sort
 - [ ] Team reference notebook complete & compiling
+- [ ] ≥4 team contests done before quals
 
-*Resources: AtCoder Educational DP Contest · CSES Problem Set (cses.fi) · CF EDU section · USACO Guide (usaco.guide) · Vjudge (team sets).*
+*Resources: AtCoder Educational DP · CSES (cses.fi) · CF EDU · USACO Guide · Vjudge (team sets) · A2OJ ladder (rating-grind source — earthshakira/c2-ladders mirror).*
