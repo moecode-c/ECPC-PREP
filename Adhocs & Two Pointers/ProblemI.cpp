@@ -21,10 +21,11 @@ int main() {
     }
 
     int l = 0;
+    int r = 0;
     int maxnumbooks = 0;
     ll sum = 0;
 
-    for (int r = 0; r < n; r++) {
+    while (r < n) {
         sum += v[r];
 
         while (sum > t) {
@@ -33,6 +34,8 @@ int main() {
         }
 
         maxnumbooks = max(maxnumbooks, r - l + 1);
+
+        r++;
     }
 
     cout << maxnumbooks;
