@@ -15,10 +15,26 @@ int main() {
     string s;
     cin >> s;
 
-    unordered_map<char,int> m;
-    for(int i = 0 ; i < s.length() ; i++){
-        m[s[i]]++;
+    vector<pair<char,int>> m;
+    string ans = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    
+    ll n = s.length();
+    ll r = 0 , l = 0 , charsnum = 0;
+    while(r < n){
+        m[r].second++;
+
+        if(m[r] == 1){
+            charsnum++;
+        }
+        else{
+            while (l < r && m[l] != 1) {
+                m[l]--;
+                l++;
+            }
+        }
+        r++;
     }
+
 
     
     return 0;
