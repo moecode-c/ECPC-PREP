@@ -2,6 +2,7 @@
 using namespace std;
 
 using ll = long long;
+#define all(x) (x).begin(), (x).end()
 
 void fast_io() {
     ios::sync_with_stdio(false);
