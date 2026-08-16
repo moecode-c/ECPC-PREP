@@ -2,6 +2,7 @@
 using namespace std;
 
 using ll = long long;
+
 #define all(x) (x).begin(), (x).end()
 
 void fast_io()
@@ -10,12 +11,15 @@ void fast_io()
     cin.tie(nullptr);
 }
 
-bool can(vector<int> fac, int mid, int t, int n)
+bool can(vector<int> &fac, int n, ll mid, ll t)
 {
-    int sum = 0;
-    for(int i = 0 ; i < n ; i++){
-        sum += floor((double)mid/fac[i]);
+    ll sum = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        sum += floor((double)mid / fac[i]);
     }
+
     return sum >= t;
 }
 
@@ -23,28 +27,37 @@ int main()
 {
     fast_io();
 
-    int n, t;
+    int n;
+    ll t;
+
     cin >> n >> t;
 
     vector<int> fac(n);
-    for(int i = 0 ; i < n ; i++) cin >> fac[i];
-    int l = 0, r = t;
 
-    int ans = t;
+    for (int i = 0; i < n; i++)
+        cin >> fac[i];
+
+    ll l = 0;
+    ll r =  t * (*min_element(all(fac)));
+
+    ll ans = r;
+
     while (l <= r)
     {
-        int mid = l + (r - l) / 2;
+        ll mid = l + (r - l) / 2;
 
-        if (can(fac, mid, t, n))
+        if (can(fac, n, mid, t))
         {
             ans = mid;
             r = mid - 1;
         }
-        else{
+        else
+        {
             l = mid + 1;
         }
     }
 
-    cout << ans + 1;
+    cout << ans << '\n';
+
     return 0;
 }
