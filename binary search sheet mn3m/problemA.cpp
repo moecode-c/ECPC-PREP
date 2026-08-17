@@ -11,16 +11,19 @@ void fast_io()
     cin.tie(nullptr);
 }
 
-bool can(vector<int> &fac, int n, ll mid, ll t)
-{
-    ll sum = 0;
+bool can(vector<int> &fac, int n, ll mid, ll t) 
+{ 
+    ll sum = 0; 
+ 
+    for (int i = 0; i < n; i++) 
+    { 
+        sum += mid / fac[i];
 
-    for (int i = 0; i < n; i++)
-    {
-        sum += floor((double)mid / fac[i]);
-    }
-
-    return sum >= t;
+        if (sum >= t)
+            return true;
+    } 
+ 
+    return false; 
 }
 
 int main()
