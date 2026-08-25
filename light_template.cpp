@@ -15,7 +15,7 @@ void solve() {
     // Write solution here
 }
 
-int main() {
+int32_t main() {
     fast_io();
 
     int t;

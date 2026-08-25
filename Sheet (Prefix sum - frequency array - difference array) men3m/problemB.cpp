@@ -11,7 +11,7 @@ void fast_io() {
     cin.tie(nullptr); 
 } 
  
-int main() { 
+int32_t main() { 
     fast_io(); 
  
     int n, m;
