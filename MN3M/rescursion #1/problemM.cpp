@@ -24,7 +24,8 @@ int32_t main() {
 
     cin >> n >> k >> a >> b;
 
-    cout << cost(n);
+    if(k == 1) cout << (n - 1) * a;
+    else cout << cost(n);
 
     return 0;
 }
