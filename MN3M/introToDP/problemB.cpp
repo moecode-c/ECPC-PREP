@@ -32,6 +32,7 @@ int diceroll(int sum)
     for (int d = 1; d <= 6; d++)
         res += diceroll(sum + d);
     res %= MOD;
+    
     return ret = res;
 }
 
