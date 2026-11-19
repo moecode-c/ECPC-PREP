@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll = long long;
+#define int long long
+#define double long double
+#define all(x) (x).begin(), (x).end()
+
+void fast_io()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+}
+int n, m;
+vector<vector<int>> adj;
+vector<bool> vis;
+
+
+
+void dfs(int node , vector<int> &comp)
+{
+    vis[node] = true;
+    comp.push_back(node);
+
+    for(int i : adj[node]){
+        if(!vis[i]){
+            dfs(i,comp);
+        }
+    }
+}
+
+int32_t main()
+{
+    fast_io();
+
+    cin >> n >> m;
+    adj.assign(n + 1, {});
+    vis.assign(n+1 , false);
+
+    for (int i = 1; i <= m; i++)
+    {
+        int a, b;
+        cin >> a >> b;
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+    }
+    vector<vector<int>> comps;
+
+    for(int i = 1 ; i <= n ; i++){
+        if(!vis[i]){
+            vector<int> comp;
+            dfs(i,comp);
+            comps.push_back(comp);
+        }
+    }
+
+    cout << comps.size() - 1 << '\n';
+    for(int i = 0 ; i < comps.size() - 1 ; i++){
+        cout << comps[i][comps[i].size() - 1] << " " << comps[i + 1][comps[i + 1].size() - 1] << '\n';
+    }
+
+
+    return 0;
+}
