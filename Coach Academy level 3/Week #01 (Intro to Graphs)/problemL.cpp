@@ -28,10 +28,10 @@ void dfs(int i, int j)
 
     vis[i][j] = true;
 
-    for (int k = 0; k < 4; k++)
+    for (int ki = 0; ki < 4; ki++)
     {
-        int inew = i + dx[k];
-        int jnew = j + dy[k];
+        int inew = i + dx[ki];
+        int jnew = j + dy[ki];
 
         if (valid(inew, jnew)){
             dfs(inew, jnew);
