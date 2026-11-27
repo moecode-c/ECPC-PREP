@@ -18,7 +18,7 @@ vector<vector<int>> dist;
 int dr[] = {1, -1, 0, 0};
 int dc[] = {0, 0, 1, -1};
 
-void bfs01()
+void bfs()
 {
     deque<pair<int, int>> dq;
     dist[0][0] = 0;
@@ -58,7 +58,7 @@ int32_t main()
         g.assign(R, "");
         for (auto &row : g) cin >> row;
         dist.assign(R, vector<int>(C, (int)1e18));
-        bfs01();
+        bfs();
         cout << dist[R - 1][C - 1] << '\n';
     }
     return 0;
